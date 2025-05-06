@@ -46,11 +46,11 @@ def get_match_data(match_id):
     return None
 
 def extrair_partidas_recentes(partidas_json):
-    tres_dias_atras = datetime.now(timezone.utc) - timedelta(days=3)
+    dias_atras = datetime.now(timezone.utc) - timedelta(days=7)
     registros = []
     for partida in partidas_json:
         game_time = datetime.fromtimestamp(partida["info"]["game_datetime"] / 1000, tz=timezone.utc)
-        if game_time < tres_dias_atras:
+        if game_time < dias_atras:
             continue
         for jogador in partida["info"]["participants"]:
             campeoes = []
