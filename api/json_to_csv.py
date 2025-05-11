@@ -1,39 +1,49 @@
 
 import json
-import pandas as pd
+import csv
 
-def extrair_dados_para_dataset(json_path, output_csv):
-    with open(json_path, "r", encoding="utf-8") as f:
-        dados_partidas = json.load(f)
+# Caminho de entrada e saída
+input_file = "../dataset/tft_raw_match_log.json"
+output_file = "../dataset/tft_match_dataset.csv"
 
-    registros = []
-    for partida in dados_partidas:
-        for jogador in partida.get("info", {}).get("participants", []):
-            campeoes = []
-            itens = []
-            traits = []
+# Lista para armazenar os dados transformados
+dados_final = []
 
-            for unit in jogador.get("units", []):
-                campeoes.append(unit.get("character_id", "unknown"))
-                itens.append([item for item in unit.get("items", [])])
+with open(input_file, "r", encoding="utf-8") as f:
+    partidas = json.load(f)
 
-            for trait in jogador.get("traits", []):
-                if trait.get("tier_current", 0) > 0:
-                    traits.append(trait["name"])
+for partida in partidas:
+    for p in partida["info"]["participants"]:
+        campeoes = []
+        traits = []
+        items = []
+        custo_total = 0
 
-            registros.append({
-                "champions": ",".join(campeoes),
-                "cost_total": sum([unit.get("tier", 0) for unit in jogador.get("units", [])]),
-                "traits": ",".join(traits),
-                "items": str(itens),
-                "placement": jogador.get("placement", 0)
-            })
+        for unit in p.get("units", []):
+            champ_id = unit.get("character_id")
+            estrelas = unit.get("tier", 1)  # número de estrelas
+            if champ_id:
+                campeoes.append(f"{champ_id}:{estrelas}")
+                custo_total += estrelas * unit.get("rarity", 0) + estrelas  # fórmula estimada
+                for item in unit.get("items", []):
+                    items.append(str(item))
 
-    df = pd.DataFrame(registros)
-    df.to_csv(output_csv, index=False)
-    print(f"[OK] Dataset salvo como: {output_csv}")
+        for t in p.get("traits", []):
+            if t.get("tier_current", 0) > 0:
+                traits.append(t["name"])
 
-if __name__ == "__main__":
-    caminho_json = input("Digite o caminho do arquivo JSON: ").strip()
-    caminho_csv = input("Digite o nome do CSV de saída (ex: saida.csv): ").strip()
-    extrair_dados_para_dataset(caminho_json, caminho_csv)
+        dados_final.append({
+            "champions": ",".join(campeoes),
+            "traits": ",".join(traits),
+            "items": ",".join(items),
+            "cost_total": custo_total,
+            "placement": p["placement"]
+        })
+
+# Salvar em CSV
+with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=dados_final[0].keys())
+    writer.writeheader()
+    writer.writerows(dados_final)
+
+print("[OK] Novo dataset com estrelas gerado:", output_file)
