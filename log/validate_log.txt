@@ -1,0 +1,40 @@
+[2025-05-23 20:49:58] 
+🔍 [CHECK] Shape do dataset:
+[2025-05-23 20:49:58] (40547, 72)
+[2025-05-23 20:49:58] 
+🔍 [CHECK] Colunas do dataset:
+[2025-05-23 20:49:58] ['champ_1_name', 'champ_2_name', 'champ_3_name', 'champ_4_name', 'champ_5_name', 'champ_6_name', 'champ_7_name', 'champ_8_name', 'champ_9_name', 'champ_10_name', 'champ_1_tier', 'champ_2_tier', 'champ_3_tier', 'champ_4_tier', 'champ_5_tier', 'champ_6_tier', 'champ_7_tier', 'champ_8_tier', 'champ_9_tier', 'champ_10_tier', 'trait_1', 'trait_2', 'trait_3', 'trait_4', 'trait_5', 'trait_6', 'trait_7', 'trait_8', 'trait_9', 'trait_10', 'trait_11', 'trait_12', 'trait_13', 'trait_14', 'trait_15', 'trait_16', 'trait_17', 'trait_18', 'trait_19', 'trait_20', 'item_1_1', 'item_1_2', 'item_1_3', 'item_2_1', 'item_2_2', 'item_2_3', 'item_3_1', 'item_3_2', 'item_3_3', 'item_4_1', 'item_4_2', 'item_4_3', 'item_5_1', 'item_5_2', 'item_5_3', 'item_6_1', 'item_6_2', 'item_6_3', 'item_7_1', 'item_7_2', 'item_7_3', 'item_8_1', 'item_8_2', 'item_8_3', 'item_9_1', 'item_9_2', 'item_9_3', 'item_10_1', 'item_10_2', 'item_10_3', 'placement', 'is_top4']
+[2025-05-23 20:49:58] 
+🔍 [CHECK] Verificar distribuição de placement:
+[2025-05-23 20:49:58] placement
+1    5078
+2    5067
+3    5067
+4    5067
+5    5067
+6    5067
+7    5067
+8    5067
+Name: count, dtype: int64
+[2025-05-23 20:49:58] 
+🔍 [CHECK] Verificar balanceamento de is_top4:
+[2025-05-23 20:49:58] is_top4
+1    20279
+0    20268
+Name: count, dtype: int64
+[2025-05-23 20:49:58] 
+🔍 [CHECK] Verificar campos com NaN:
+[2025-05-23 20:49:59] champ_1_name       17
+champ_2_name      101
+champ_3_name      144
+champ_4_name      190
+champ_5_name      252
+                ...  
+item_10_1       37460
+item_10_2       39185
+item_10_3       39556
+placement           0
+is_top4             0
+Length: 72, dtype: int64
+[2025-05-23 20:49:59] 
+✅ Validação concluída. ✔️

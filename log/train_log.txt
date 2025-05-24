@@ -1,0 +1,24 @@
+[2025-05-23 20:54:15] 🔍 Carregando dataset...
+[2025-05-23 20:54:15] 🔧 Corrigindo tipos de dados...
+[2025-05-23 20:54:16] 🔍 Shape dos dados: (40547, 71)
+[2025-05-23 20:54:16] 🔍 Balanceamento do target:
+is_top4
+1    20279
+0    20268
+Name: count, dtype: int64
+[2025-05-23 20:54:16] 🚀 Iniciando treinamento...
+[2025-05-23 20:55:33] ✅ Acurácia: 0.8262638717632552
+[2025-05-23 20:55:33] ✅ Matriz de confusão:
+[[3326  728]
+ [ 681 3375]]
+[2025-05-23 20:55:33] ✅ Relatório de classificação:
+              precision    recall  f1-score   support
+
+           0       0.83      0.82      0.83      4054
+           1       0.82      0.83      0.83      4056
+
+    accuracy                           0.83      8110
+   macro avg       0.83      0.83      0.83      8110
+weighted avg       0.83      0.83      0.83      8110
+
+[2025-05-23 20:55:33] 💾 [OK] Modelo salvo em model/random_forest_tft.pkl

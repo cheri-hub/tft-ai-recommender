@@ -1,0 +1,240 @@
+{
+  "TFT14_Alistar": [
+    "GoldenOx",
+    "Bruiser"
+  ],
+  "TFT14_Annie": [
+    "GoldenOx",
+    "A.M.P."
+  ],
+  "TFT14_Aphelios": [
+    "GoldenOx",
+    "Marksman"
+  ],
+  "TFT14_Aurora": [
+    "AnimaSquad",
+    "Dynamo"
+  ],
+  "TFT14_Brand": [
+    "StreetDemon",
+    "Techie"
+  ],
+  "TFT14_Braum": [
+    "Syndicate",
+    "Vanguard"
+  ],
+  "TFT14_Cho'Gath": [
+    "BoomBot",
+    "Bruiser"
+  ],
+  "TFT14_Darius": [
+    "Syndicate",
+    "Bruiser"
+  ],
+  "TFT14_DrMundo": [
+    "StreetDemon",
+    "Bruiser"
+  ],
+  "TFT14_Draven": [
+    "Cypher",
+    "Rapidfire"
+  ],
+  "TFT14_Ekko": [
+    "StreetDemon",
+    "Strategist"
+  ],
+  "TFT14_Elise": [
+    "Nitro",
+    "Dynamo"
+  ],
+  "TFT14_Fiddlesticks": [
+    "BoomBot",
+    "Techie"
+  ],
+  "TFT14_Galio": [
+    "Cypher",
+    "Bastion"
+  ],
+  "TFT14_Garen": [
+    "GodoftheNet"
+  ],
+  "TFT14_Gragas": [
+    "Divinicorp",
+    "Bruiser"
+  ],
+  "TFT14_Graves": [
+    "GoldenOx",
+    "Executioner"
+  ],
+  "TFT14_Illaoi": [
+    "AnimaSquad",
+    "Bastion"
+  ],
+  "TFT14_JarvanIV": [
+    "GoldenOx",
+    "Slayer"
+  ],
+  "TFT14_Jax": [
+    "Exotech",
+    "Bastion"
+  ],
+  "TFT14_Jhin": [
+    "Exotech",
+    "Dynamo"
+  ],
+  "TFT14_Jinx": [
+    "StreetDemon",
+    "Marksman"
+  ],
+  "TFT14_Kindred": [
+    "Nitro",
+    "Marksman"
+  ],
+  "TFT14_Kobuko": [
+    "Cyberboss",
+    "Bruiser"
+  ],
+  "TFT14_KogMaw": [
+    "BoomBot",
+    "Rapidfire"
+  ],
+  "TFT14_LeBlanc": [
+    "Cypher",
+    "Strategist"
+  ],
+  "TFT14_Leona": [
+    "AnimaSquad",
+    "Vanguard"
+  ],
+  "TFT14_MissFortune": [
+    "Syndicate",
+    "Dynamo"
+  ],
+  "TFT14_Mordekaiser": [
+    "Exotech",
+    "Bruiser"
+  ],
+  "TFT14_Morgana": [
+    "Divinicorp",
+    "Dynamo"
+  ],
+  "TFT14_Naafiri": [
+    "Exotech",
+    "A.M.P."
+  ],
+  "TFT14_Neeko": [
+    "StreetDemon",
+    "Strategist"
+  ],
+  "TFT14_Nidalee": [
+    "Nitro",
+    "A.M.P."
+  ],
+  "TFT14_Poppy": [
+    "Cyberboss",
+    "Bastion"
+  ],
+  "TFT14_Renekton": [
+    "Divinicorp",
+    "Overlord"
+  ],
+  "TFT14_Rengar": [
+    "StreetDemon",
+    "Executioner"
+  ],
+  "TFT14_Rhaast": [
+    "Divinicorp",
+    "Vanguard"
+  ],
+  "TFT14_Samira": [
+    "StreetDemon",
+    "A.M.P."
+  ],
+  "TFT14_Sejuani": [
+    "Exotech",
+    "Bastion"
+  ],
+  "TFT14_Senna": [
+    "Divinicorp",
+    "Slayer"
+  ],
+  "TFT14_Seraphine": [
+    "AnimaSquad",
+    "Techie"
+  ],
+  "TFT14_Shaco": [
+    "Syndicate",
+    "Slayer"
+  ],
+  "TFT14_Shyvana": [
+    "Nitro",
+    "Bastion"
+  ],
+  "TFT14_Skarner": [
+    "BoomBot",
+    "Vanguard"
+  ],
+  "TFT14_Sylas": [
+    "AnimaSquad",
+    "Vanguard"
+  ],
+  "TFT14_TwistedFate": [
+    "Syndicate",
+    "Rapidfire"
+  ],
+  "TFT14_Urgot": [
+    "BoomBot",
+    "Executioner"
+  ],
+  "TFT14_Varus": [
+    "Exotech",
+    "Executioner"
+  ],
+  "TFT14_Vayne": [
+    "AnimaSquad",
+    "Slayer"
+  ],
+  "TFT14_Veigar": [
+    "Cyberboss",
+    "Techie"
+  ],
+  "TFT14_Vex": [
+    "Divinicorp",
+    "Executioner"
+  ],
+  "TFT14_Vi": [
+    "Cypher",
+    "Vanguard"
+  ],
+  "TFT14_Viego": [
+    "GoldenOx",
+    "SoulKiller"
+  ],
+  "TFT14_Xayah": [
+    "AnimaSquad",
+    "Marksman"
+  ],
+  "TFT14_Yuumi": [
+    "AnimaSquad",
+    "A.M.P."
+  ],
+  "TFT14_Zac": [
+    "Virus"
+  ],
+  "TFT14_Zed": [
+    "Cypher",
+    "Slayer"
+  ],
+  "TFT14_Zeri": [
+    "Exotech",
+    "Rapidfire"
+  ],
+  "TFT14_Ziggs": [
+    "Cyberboss",
+    "Strategist"
+  ],
+  "TFT14_Zyra": [
+    "StreetDemon",
+    "Techie"
+  ]
+}
