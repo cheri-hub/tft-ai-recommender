@@ -127,6 +127,4 @@ Este projeto é livre para uso pessoal e educacional. Para uso comercial, consul
 
 ## 📫 Contato
 
-- Desenvolvido por [Seu Nome Aqui]
-- LinkedIn: [Seu LinkedIn]
-- GitHub: [Seu GitHub]
+- Desenvolvido por Luis Enrique Montagner
