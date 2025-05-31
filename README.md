@@ -69,7 +69,7 @@ Consiga sua chave gratuita em: [https://developer.riotgames.com/](https://develo
 ### 1. Coletar dados da API da Riot
 
 ```bash
-python api/coletartft.py
+python api/coletar_tft_ranked_dataset.py
 ```
 
 ### 2. Processar e limpar os dados
