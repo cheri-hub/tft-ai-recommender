@@ -1,87 +1,50 @@
+# TFT4Caster
 
-# TFT4Caster 🎯
-
-**TFT4Caster** é uma aplicação de inteligência artificial que prevê sua chance de alcançar o **Top 4 no Teamfight Tactics (TFT)** com base na sua composição de campeões, traits e tiers.
-
-> ⚙️ Este projeto **não inclui dataset nem modelo treinado**. O pipeline completo — desde a coleta de dados via API da Riot até o treinamento do modelo — está incluso para que você mesmo gere e atualize seu modelo localmente.
+Sistema inteligente para previsão de Top 4 no Teamfight Tactics (TFT).
 
 ---
 
-## 🚀 Funcionalidades
+## 🎓 Tecnologias Utilizadas
 
-- 🔍 **Previsão da chance de Top 4** no TFT com base na sua composição.
-- 🧠 **Análise da composição:**
-  - Quantidade de campeões.
-  - Tier médio.
-  - Traits ativas e quase ativas.
-- 📊 **Visualização com gráficos** da distribuição dos tiers.
-- 📥 **Pipeline completo:**
-  - Coleta de dados via **Riot API**.
-  - Processamento dos dados brutos.
-  - Geração do dataset.
-  - Treinamento do modelo de machine learning.
-- 🌐 Interface interativa em **Streamlit**.
+* Python 3.10+
+* pandas
+* scikit-learn
+* Streamlit
+* matplotlib
+* seaborn
+* requests
+* joblib
+* tqdm
+* pyperclip
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+## 🚫 Requisitos
 
-- **Python 3.9+**
-- **Streamlit** (Interface)
-- **Scikit-Learn** (Machine Learning)
-- **Pandas** (Manipulação de Dados)
-- **Matplotlib** (Gráficos)
-- **Joblib** (Persistência de modelos)
-- **Riot Games API** (Coleta de dados)
-- **dotenv** (Gestão de variáveis sensíveis)
-- **JSON, CSV, REST API**
+* Ter o Python instalado
+* Criar e ativar um ambiente virtual (recomendado)
 
----
+### 🔹 Criar ambiente virtual:
 
-## 📁 Estrutura do projeto
-
-```
-tft4caster/
-│
-├── api/                 # Scripts para coletar dados da API da Riot
-├── dataset/             # Dados brutos e processados (gerados localmente)
-├── docs/                # Documentação
-├── interface/           # Interface do usuário (Streamlit)
-├── model/               # Script para treinamento do modelo
-├── requirements.txt     # Dependências
-├── .env.example         # Exemplo do arquivo .env com chave da Riot
-└── README.md            # Documentação do projeto
+```bash
+python -m venv venv
 ```
 
----
+### 🔹 Ativar o ambiente virtual:
 
-## 🔑 Configuração inicial
+* **Windows:**
 
-### 1️⃣ Obtenha uma chave da **Riot API**
-
-- Acesse: https://developer.riotgames.com/
-- Crie uma conta ou faça login.
-- Gere sua chave de API.
-
-### 2️⃣ Crie um arquivo `.env` na raiz do projeto:
-
-```
-RIOT_API_KEY=your_riot_api_key_here
+```bash
+venv\Scripts\activate
 ```
 
-> ⚠️ Sua chave da Riot tem validade limitada (para dev). Para usos prolongados, é necessário solicitar uma chave de produção.
+* **Mac/Linux:**
 
----
+```bash
+source venv/bin/activate
+```
 
-## ⚙️ Instalação
-
-### 🔥 Pré-requisitos
-
-- Python 3.9+
-- Pip instalado
-- (Recomendado) Ambiente virtual
-
-### 🏗️ Instale as dependências:
+### 🔹 Instalar dependências:
 
 ```bash
 pip install -r requirements.txt
@@ -89,117 +52,92 @@ pip install -r requirements.txt
 
 ---
 
-## 📥 Coletando dados
+## 🔐 Configuração da API da Riot
 
-1. Vá até a pasta `/api/`:
+Crie um arquivo `.env` na raiz do projeto com a seguinte variável:
 
-```bash
-cd api
+```env
+RIOT_API_KEY=sua_chave_api_aqui
 ```
 
-2. Execute o script de coleta:
-
-```bash
-python coletar_tft_ranked_dataset.py
-```
-
-> 🔸 Este script irá:
-> - Coletar dados de partidas ranked no TFT.
-> - Gerar um arquivo JSON com dados brutos em `/dataset/tft_raw_match_log.json`.
+Consiga sua chave gratuita em: [https://developer.riotgames.com/](https://developer.riotgames.com/)
 
 ---
 
-## 🔄 Processando dados
+## 💡 Passo a Passo para Executar o Projeto
 
-Ainda na pasta `/api/`, execute:
-
-```bash
-python json_to_csv.py
-```
-
-> 🔸 Isso irá transformar os dados brutos em um CSV estruturado no diretório `/dataset/`.
-
----
-
-## 🧠 Treinando o modelo
-
-1. Vá para a pasta `/model/`:
+### 1. Coletar dados da API da Riot
 
 ```bash
-cd model
+python api/coletartft.py
 ```
 
-2. Execute o treinamento:
+### 2. Processar e limpar os dados
 
 ```bash
-python train_model.py
+python helper/parser.py
 ```
 
-> 🔸 O modelo treinado será salvo na pasta `/model/` como `random_forest_tft.pkl`.
-
----
-
-## 🚀 Executando a interface
-
-1. Vá até a pasta `/interface/`:
+### 3. Validar os dados
 
 ```bash
-cd interface
+python helper/validate_dataset.py
 ```
 
-2. Execute a interface Streamlit:
+### 4. Treinar o modelo de machine learning
+
+```bash
+python model/train_model.py
+```
+
+### 5. Iniciar a aplicação Streamlit
 
 ```bash
 streamlit run app.py
 ```
 
-3. Acesse o link fornecido (geralmente `http://localhost:8501`) no navegador.
+---
+
+## 🌐 Funcionalidades
+
+* Prever chance de Top 4 com base na composição montada manualmente
+* Exibir sinergias (traits) ativas
+* Mostrar custo total e quantidade de campeões
+* Visualização com ícones e estatísticas
 
 ---
 
-## 💻 Fluxo de uso
+## 📁 Estrutura do Projeto
 
-1. Monte sua composição selecionando campeões e níveis de estrela.
-2. Veja a análise:
-   - Traits ativas.
-   - Traits quase ativas.
-   - Gráfico da distribuição dos tiers.
-3. Clique em **"Prever Resultado"** para calcular a chance de Top 4.
-4. Ajuste sua composição com base nas análises.
-
----
-
-## ☁️ Deploy (opcional)
-
-### ✔️ Deploy na Streamlit Cloud:
-
-1. Suba seu repositório no GitHub.
-2. Acesse https://streamlit.io/ → *"Get Started"* → *"Deploy an app"*.
-3. Configure o comando de execução:
-
-```bash
-cd interface
-streamlit run app.py
+```
+tft-ai-recommender/
+├── api/
+│   └── coletartft.py
+├── helper/
+│   ├── parser.py
+│   ├── validate_dataset.py
+│   └── arquivos auxiliares (.json)
+├── model/
+│   └── train_model.py
+│   └── random_forest_tft.pkl (gerado)
+├── dataset/
+│   └── dataset.csv (gerado)
+├── app.py
+├── requirements.txt
+└── .env
 ```
 
-4. ✅ Seu app estará online!
+---
+
+## 🚀 Futuras melhorias
+
+* Sugestão automática de composições
+* Reforço visual com badges, gráficos e ícones
+* Integração com banco de dados e cache
+* Versão web hospedada (Streamlit Cloud ou HuggingFace)
 
 ---
 
-## 🧽 Manutenção e melhorias
+## 👤 Autor
 
-- 🔄 Você pode rodar novamente a coleta de dados e o treinamento para atualizar o modelo com dados mais recentes.
-- 🧠 Avalie melhorias no modelo ou na interface.
-
----
-
-## 📝 Licença
-
-Este projeto é livre para uso pessoal e educacional.  
-Para uso comercial, consulte os desenvolvedores.
-
----
-
-## 📫 Contato
-
-- Desenvolvido por Luis Enrique Montagner
+**TFT4Caster** - projeto de IA aplicada ao game design por \[Luis Montagner]
